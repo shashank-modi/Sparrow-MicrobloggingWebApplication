@@ -1,5 +1,5 @@
 # 1) Build stage
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
 # copy csproj first to leverage Docker layer caching
@@ -13,12 +13,12 @@ COPY server/. ./
 RUN dotnet publish -c Release -o /app/publish
 
 # 2) Runtime stage
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish ./
 
-# Expose Kestrel port
-ENV ASPNETCORE_URLS=http://+:8080
+# Expose Kestrel port (Render provides $PORT)
+ENV ASPNETCORE_URLS="http://+:${PORT:-8080}"
 EXPOSE 8080
 
 # OPTIONAL but useful: set production env
