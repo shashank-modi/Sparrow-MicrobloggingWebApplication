@@ -1,0 +1,30 @@
+# Git + IDE
+.git
+.gitignore
+.vscode
+.idea
+*.suo
+*.user
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+out/
+publish/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node stuff if present (e.g., if you copied client bits accidentally)
+node_modules/
+dist/
+
+# Secrets (never send to image)
+*.env
+appsettings.Development.json
+appsettings.Production.json
