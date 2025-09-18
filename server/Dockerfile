@@ -1,28 +1,31 @@
-# 1) Build stage
+# server/Dockerfile
+
+# ---------- build stage ----------
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-# copy csproj first to leverage Docker layer caching
-COPY server/*.csproj ./ 
+# copy the project file(s) and restore
+COPY *.csproj ./
 RUN dotnet restore
 
-# now copy the remaining source
-COPY server/. ./
+# now copy the rest of the source
+COPY . ./
 
-# publish (self-contained build output)
-RUN dotnet publish -c Release -o /app/publish
+# publish to a clean folder
+RUN dotnet publish -c Release -o /app/out
 
-# 2) Runtime stage
+# ---------- runtime stage ----------
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
-COPY --from=build /app/publish ./
 
-# Expose Kestrel port (Render provides $PORT)
-ENV ASPNETCORE_URLS="http://+:${PORT:-8080}"
+# copy build output
+COPY --from=build /app/out ./
+
+# Let Render tell us which port to listen on.
+# You'll set ASPNETCORE_URLS in Render env to: http://0.0.0.0:${PORT}
+# (see notes below)
+# EXPOSE is optional for Render, but harmless:
 EXPOSE 8080
 
-# OPTIONAL but useful: set production env
-ENV ASPNETCORE_ENVIRONMENT=Production
-
-# entrypoint
+# IMPORTANT: set this to your actual DLL name (your .csproj name)
 ENTRYPOINT ["dotnet", "server.dll"]
