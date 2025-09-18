@@ -24,7 +24,6 @@ client/.env
 server/.env
 server/appsettings.Development.json
 server/appsettings.Production.json
-server/appsettings.json
 
 # Instead of ignoring migrations completely, ignore only snapshot if not needed
 # server/Migrations/*ModelSnapshot.cs
