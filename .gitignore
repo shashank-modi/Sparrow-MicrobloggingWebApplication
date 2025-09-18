@@ -1,0 +1,45 @@
+# Build outputs
+server/bin/
+server/obj/
+server/out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+sqlscripts/
+
+# Logs
+*.log
+*.tlog
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Secrets & configs
+client/.env
+server/.env
+server/appsettings.Development.json
+server/appsettings.Production.json
+server/appsettings.json
+
+# Instead of ignoring migrations completely, ignore only snapshot if not needed
+# server/Migrations/*ModelSnapshot.cs
+
+# IDE
+.vscode/
+.idea/
+
+# Node.js (frontend build artifacts)
+client/node_modules/
+client/dist/
+client/build/
+
+# EF migrations (optional — if you don’t want schema history in repo)
+server/Migrations/
+
+# Publish outputs
+server/publish/
