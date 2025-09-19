@@ -56,7 +56,7 @@ Frontend runs on http://localhost:5173
 Backend runs on http://localhost:5112
 
 ```
-⸻
+---
 
 ## Environment Variables
 ```
@@ -72,7 +72,7 @@ Frontend (Vercel → Environment tab)
 VITE_API_URL=https://your-backend.onrender.com
 
 ```
-⸻
+---
 
 ## Deployment
 ```
@@ -93,7 +93,7 @@ Frontend
 }
 
 ```
-⸻
+---
 
 ## Roadmap
  ```
@@ -102,13 +102,13 @@ Frontend
 	•	Notifications (likes, comments, follows)
 	•	Mobile app version
 ```
-⸻
+---
 
 #### Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss.
 
-⸻
+---
 
  Author
 
