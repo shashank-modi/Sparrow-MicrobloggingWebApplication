@@ -1,4 +1,4 @@
- Sparrow – Microblogging Web Application
+# Sparrow – Microblogging Web Application
 
 Sparrow is a **Microblogging app** built with a modern stack:  
 - **Frontend:** React + Material-UI (MUI)  
