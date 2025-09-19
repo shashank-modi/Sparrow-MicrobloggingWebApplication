@@ -58,7 +58,7 @@ Backend runs on http://localhost:5112
 ```
 ⸻
 
- Environment Variables
+## Environment Variables
 ```
 Backend (Render → Environment tab)
 
@@ -74,7 +74,7 @@ VITE_API_URL=https://your-backend.onrender.com
 ```
 ⸻
 
-� Deployment
+## Deployment
 ```
 Backend
 	•	Deploy to Render with a Dockerfile in /server
@@ -95,7 +95,7 @@ Frontend
 ```
 ⸻
 
- Roadmap
+## Roadmap
  ```
 	•	Image uploads for posts
 	•	Real-time feed with WebSockets
@@ -104,7 +104,7 @@ Frontend
 ```
 ⸻
 
- Contributing
+#### Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss.
 
